@@ -8,17 +8,17 @@ namespace SqlServer.InformationSchema
 	
 	public class KeyColumnUsageFactory
 	{
-		public static List<SqlServer.InformationSchema.KeyColumnUsage> FindAll(System.Data.SqlClient.SqlConnection connection)
+		public static List<SqlServer.InformationSchema.KeyColumnUsage> FindAll(SqlConnection connection)
 		{
 			if ((connection == null))
 			{
-				throw new System.Exception("Connection can not be null/Nothing.");
+				throw new Exception("Connection can not be null/Nothing.");
 			}
 			if ((connection.State != ConnectionState.Open))
 			{
 				connection.Open();
 			}
-			System.Data.SqlClient.SqlDataReader reader = null;
+            SqlDataReader reader = null;
 			try
 			{
 				reader = SqlDb.ExecuteReader(connection, CommandType.Text, "SELECT * FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE", false);
@@ -33,15 +33,15 @@ namespace SqlServer.InformationSchema
 				}
 			}
 		}
-		public static List<SqlServer.InformationSchema.KeyColumnUsage> ReadRecords(System.Data.SqlClient.SqlDataReader reader)
+		public static List<SqlServer.InformationSchema.KeyColumnUsage> ReadRecords(SqlDataReader reader)
 		{
 			if ((reader == null))
 			{
-				throw new System.Exception("Reader can not be null/Nothing.");
+				throw new Exception("Reader can not be null/Nothing.");
 			}
 			if ((reader.HasRows == false))
 			{
-				throw new System.Exception("Reader has no rows.");
+				throw new Exception("Reader has no rows.");
 			}
 			List<SqlServer.InformationSchema.KeyColumnUsage> result = null;
 			int ConstraintCatalogOrdinal = reader.GetOrdinal("CONSTRAINT_CATALOG");
@@ -63,7 +63,7 @@ namespace SqlServer.InformationSchema
 				SqlServer.InformationSchema.KeyColumnUsage tmp = new SqlServer.InformationSchema.KeyColumnUsage();
 				if (reader.IsDBNull(ConstraintCatalogOrdinal))
 				{
-					tmp.ConstraintCatalog = String.Empty;
+					tmp.ConstraintCatalog = string.Empty;
 				}
 				else
 				{
@@ -71,7 +71,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(ConstraintSchemaOrdinal))
 				{
-					tmp.ConstraintSchema = String.Empty;
+					tmp.ConstraintSchema = string.Empty;
 				}
 				else
 				{
@@ -79,7 +79,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(ConstraintNameOrdinal))
 				{
-					tmp.ConstraintName = String.Empty;
+					tmp.ConstraintName = string.Empty;
 				}
 				else
 				{
@@ -87,7 +87,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(TableCatalogOrdinal))
 				{
-					tmp.TableCatalog = String.Empty;
+					tmp.TableCatalog = string.Empty;
 				}
 				else
 				{
@@ -95,7 +95,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(TableSchemaOrdinal))
 				{
-					tmp.TableSchema = String.Empty;
+					tmp.TableSchema = string.Empty;
 				}
 				else
 				{
@@ -103,7 +103,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(TableNameOrdinal))
 				{
-					tmp.TableName = String.Empty;
+					tmp.TableName = string.Empty;
 				}
 				else
 				{
@@ -111,7 +111,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(ColumnNameOrdinal))
 				{
-					tmp.ColumnName = String.Empty;
+					tmp.ColumnName = string.Empty;
 				}
 				else
 				{

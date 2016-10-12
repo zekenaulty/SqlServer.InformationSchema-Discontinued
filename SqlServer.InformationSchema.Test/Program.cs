@@ -15,6 +15,10 @@ namespace SqlServer.InformationSchema.Test
     /// </summary>
     class Program
     {
+        /// <summary>
+        /// Program entry point.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
 
@@ -43,6 +47,9 @@ namespace SqlServer.InformationSchema.Test
                     }
                 }
                 #endregion
+                #region COLUMNS
+
+                #endregion
             }
 
             Console.Write("Press ENTER to exit.");
@@ -50,7 +57,7 @@ namespace SqlServer.InformationSchema.Test
         }
 
         /// <summary>
-        /// 
+        /// Show a message and wait for enter.
         /// </summary>
         static void EnterForNext()
         {
@@ -60,7 +67,7 @@ namespace SqlServer.InformationSchema.Test
         }
 
         /// <summary>
-        /// 
+        /// A key press of Y returns true and N return false; all other key strokes are ignored.
         /// </summary>
         /// <param name="section"></param>
         /// <returns></returns>
@@ -83,7 +90,7 @@ namespace SqlServer.InformationSchema.Test
         }
 
         /// <summary>
-        /// 
+        /// Wait for the user to press ENTER and supress all other key strokes.
         /// </summary>
         static void WaitForEnter()
         {

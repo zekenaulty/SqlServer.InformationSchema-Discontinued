@@ -145,22 +145,22 @@ namespace SqlServer.InformationSchema
 				CheckConstraint tmp = new CheckConstraint();
 
 				if (reader.IsDBNull(ConstraintCatalogOrdinal))
-					tmp.ConstraintCatalog = String.Empty;
+					tmp.ConstraintCatalog = string.Empty;
 				else
 					tmp.ConstraintCatalog = reader.GetString(ConstraintCatalogOrdinal);
 
 				if (reader.IsDBNull(ConstraintSchemaOrdinal))
-					tmp.ConstraintSchema = String.Empty;
+					tmp.ConstraintSchema = string.Empty;
 				else
 					tmp.ConstraintSchema = reader.GetString(ConstraintSchemaOrdinal);
 
 				if (reader.IsDBNull(ConstraintNameOrdinal))
-					tmp.ConstraintName = String.Empty;
+					tmp.ConstraintName = string.Empty;
 				else
 					tmp.ConstraintName = reader.GetString(ConstraintNameOrdinal);
 
 				if (reader.IsDBNull(CheckClauseOrdinal))
-					tmp.CheckClause = String.Empty;
+					tmp.CheckClause = string.Empty;
 				else
 					tmp.CheckClause = reader.GetString(CheckClauseOrdinal);
 

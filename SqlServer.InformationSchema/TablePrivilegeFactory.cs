@@ -8,17 +8,17 @@ namespace SqlServer.InformationSchema
 	
 	public class TablePrivilegeFactory
 	{
-		public static List<SqlServer.InformationSchema.TablePrivilege> FindAll(System.Data.SqlClient.SqlConnection connection)
+		public static List<SqlServer.InformationSchema.TablePrivilege> FindAll(SqlConnection connection)
 		{
 			if ((connection == null))
 			{
-				throw new System.Exception("Connection can not be null/Nothing.");
+				throw new Exception("Connection can not be null/Nothing.");
 			}
 			if ((connection.State != ConnectionState.Open))
 			{
 				connection.Open();
 			}
-			System.Data.SqlClient.SqlDataReader reader = null;
+            SqlDataReader reader = null;
 			try
 			{
 				reader = SqlDb.ExecuteReader(connection, CommandType.Text, "SELECT * FROM INFORMATION_SCHEMA.TABLE_PRIVILEGES", false);
@@ -33,15 +33,15 @@ namespace SqlServer.InformationSchema
 				}
 			}
 		}
-		public static List<SqlServer.InformationSchema.TablePrivilege> ReadRecords(System.Data.SqlClient.SqlDataReader reader)
+		public static List<SqlServer.InformationSchema.TablePrivilege> ReadRecords(SqlDataReader reader)
 		{
 			if ((reader == null))
 			{
-				throw new System.Exception("Reader can not be null/Nothing.");
+				throw new Exception("Reader can not be null/Nothing.");
 			}
 			if ((reader.HasRows == false))
 			{
-				throw new System.Exception("Reader has no rows.");
+				throw new Exception("Reader has no rows.");
 			}
 			List<SqlServer.InformationSchema.TablePrivilege> result = null;
 			int GrantorOrdinal = reader.GetOrdinal("GRANTOR");
@@ -62,7 +62,7 @@ namespace SqlServer.InformationSchema
 				SqlServer.InformationSchema.TablePrivilege tmp = new SqlServer.InformationSchema.TablePrivilege();
 				if (reader.IsDBNull(GrantorOrdinal))
 				{
-					tmp.Grantor = String.Empty;
+					tmp.Grantor = string.Empty;
 				}
 				else
 				{
@@ -70,7 +70,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(GranteeOrdinal))
 				{
-					tmp.Grantee = String.Empty;
+					tmp.Grantee = string.Empty;
 				}
 				else
 				{
@@ -78,7 +78,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(TableCatalogOrdinal))
 				{
-					tmp.TableCatalog = String.Empty;
+					tmp.TableCatalog = string.Empty;
 				}
 				else
 				{
@@ -86,7 +86,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(TableSchemaOrdinal))
 				{
-					tmp.TableSchema = String.Empty;
+					tmp.TableSchema = string.Empty;
 				}
 				else
 				{
@@ -94,7 +94,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(TableNameOrdinal))
 				{
-					tmp.TableName = String.Empty;
+					tmp.TableName = string.Empty;
 				}
 				else
 				{
@@ -102,7 +102,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(PrivilegeTypeOrdinal))
 				{
-					tmp.PrivilegeType = String.Empty;
+					tmp.PrivilegeType = string.Empty;
 				}
 				else
 				{
@@ -110,7 +110,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(IsGrantableOrdinal))
 				{
-					tmp.IsGrantable = String.Empty;
+					tmp.IsGrantable = string.Empty;
 				}
 				else
 				{

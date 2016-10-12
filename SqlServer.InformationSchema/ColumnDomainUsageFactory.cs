@@ -8,17 +8,17 @@ namespace SqlServer.InformationSchema
 	
 	public class ColumnDomainUsageFactory
 	{
-		public static List<SqlServer.InformationSchema.ColumnDomainUsage> FindAll(System.Data.SqlClient.SqlConnection connection)
+		public static List<SqlServer.InformationSchema.ColumnDomainUsage> FindAll(SqlConnection connection)
 		{
 			if ((connection == null))
 			{
-				throw new System.Exception("Connection can not be null/Nothing.");
+				throw new Exception("Connection can not be null/Nothing.");
 			}
 			if ((connection.State != ConnectionState.Open))
 			{
 				connection.Open();
 			}
-			System.Data.SqlClient.SqlDataReader reader = null;
+            SqlDataReader reader = null;
 			try
 			{
 				reader = SqlDb.ExecuteReader(connection, CommandType.Text, "SELECT * FROM INFORMATION_SCHEMA.COLUMN_DOMAIN_USAGE", false);
@@ -33,15 +33,15 @@ namespace SqlServer.InformationSchema
 				}
 			}
 		}
-		public static List<SqlServer.InformationSchema.ColumnDomainUsage> ReadRecords(System.Data.SqlClient.SqlDataReader reader)
+		public static List<SqlServer.InformationSchema.ColumnDomainUsage> ReadRecords(SqlDataReader reader)
 		{
 			if ((reader == null))
 			{
-				throw new System.Exception("Reader can not be null/Nothing.");
+				throw new Exception("Reader can not be null/Nothing.");
 			}
 			if ((reader.HasRows == false))
 			{
-				throw new System.Exception("Reader has no rows.");
+				throw new Exception("Reader has no rows.");
 			}
 			List<SqlServer.InformationSchema.ColumnDomainUsage> result = null;
 			int DomainCatalogOrdinal = reader.GetOrdinal("DOMAIN_CATALOG");
@@ -62,7 +62,7 @@ namespace SqlServer.InformationSchema
 				SqlServer.InformationSchema.ColumnDomainUsage tmp = new SqlServer.InformationSchema.ColumnDomainUsage();
 				if (reader.IsDBNull(DomainCatalogOrdinal))
 				{
-					tmp.DomainCatalog = String.Empty;
+					tmp.DomainCatalog = string.Empty;
 				}
 				else
 				{
@@ -70,7 +70,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(DomainSchemaOrdinal))
 				{
-					tmp.DomainSchema = String.Empty;
+					tmp.DomainSchema = string.Empty;
 				}
 				else
 				{
@@ -78,7 +78,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(DomainNameOrdinal))
 				{
-					tmp.DomainName = String.Empty;
+					tmp.DomainName = string.Empty;
 				}
 				else
 				{
@@ -86,7 +86,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(TableCatalogOrdinal))
 				{
-					tmp.TableCatalog = String.Empty;
+					tmp.TableCatalog = string.Empty;
 				}
 				else
 				{
@@ -94,7 +94,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(TableSchemaOrdinal))
 				{
-					tmp.TableSchema = String.Empty;
+					tmp.TableSchema = string.Empty;
 				}
 				else
 				{
@@ -102,7 +102,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(TableNameOrdinal))
 				{
-					tmp.TableName = String.Empty;
+					tmp.TableName = string.Empty;
 				}
 				else
 				{
@@ -110,7 +110,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(ColumnNameOrdinal))
 				{
-					tmp.ColumnName = String.Empty;
+					tmp.ColumnName = string.Empty;
 				}
 				else
 				{

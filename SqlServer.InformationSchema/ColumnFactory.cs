@@ -8,17 +8,15 @@ namespace SqlServer.InformationSchema
 	
 	public class ColumnFactory
 	{
-		public static List<SqlServer.InformationSchema.Column> FindAll(System.Data.SqlClient.SqlConnection connection)
+		public static List<Column> FindAll(SqlConnection connection)
 		{
 			if ((connection == null))
-			{
-				throw new System.Exception("Connection can not be null/Nothing.");
-			}
+				throw new Exception("Connection can not be null/Nothing.");
+
 			if ((connection.State != ConnectionState.Open))
-			{
 				connection.Open();
-			}
-			System.Data.SqlClient.SqlDataReader reader = null;
+
+            SqlDataReader reader = null;
 			try
 			{
 				reader = SqlDb.ExecuteReader(connection, CommandType.Text, "SELECT * FROM INFORMATION_SCHEMA.COLUMNS", false);
@@ -33,17 +31,16 @@ namespace SqlServer.InformationSchema
 				}
 			}
 		}
-		public static List<SqlServer.InformationSchema.Column> ReadRecords(System.Data.SqlClient.SqlDataReader reader)
+
+		public static List<Column> ReadRecords(SqlDataReader reader)
 		{
 			if ((reader == null))
-			{
-				throw new System.Exception("Reader can not be null/Nothing.");
-			}
+				throw new Exception("Reader can not be null/Nothing.");
+
 			if ((reader.HasRows == false))
-			{
-				throw new System.Exception("Reader has no rows.");
-			}
-			List<SqlServer.InformationSchema.Column> result = null;
+				throw new Exception("Reader has no rows.");
+
+			List<Column> result = null;
 			int TableCatalogOrdinal = reader.GetOrdinal("TABLE_CATALOG");
 			int TableSchemaOrdinal = reader.GetOrdinal("TABLE_SCHEMA");
 			int TableNameOrdinal = reader.GetOrdinal("TABLE_NAME");
@@ -67,205 +64,134 @@ namespace SqlServer.InformationSchema
 			int DomainCatalogOrdinal = reader.GetOrdinal("DOMAIN_CATALOG");
 			int DomainSchemaOrdinal = reader.GetOrdinal("DOMAIN_SCHEMA");
 			int DomainNameOrdinal = reader.GetOrdinal("DOMAIN_NAME");
-			for (
-			; reader.Read(); 
-			)
+
+			while (reader.Read())
 			{
 				if ((result == null))
-				{
-					result = new List<SqlServer.InformationSchema.Column>();
-				}
-				SqlServer.InformationSchema.Column tmp = new SqlServer.InformationSchema.Column();
+					result = new List<Column>();
+
+				Column tmp = new Column();
 				if (reader.IsDBNull(TableCatalogOrdinal))
-				{
-					tmp.TableCatalog = String.Empty;
-				}
+					tmp.TableCatalog = string.Empty;
 				else
-				{
 					tmp.TableCatalog = reader.GetString(TableCatalogOrdinal);
-				}
+
 				if (reader.IsDBNull(TableSchemaOrdinal))
-				{
-					tmp.TableSchema = String.Empty;
-				}
+					tmp.TableSchema = string.Empty;
 				else
-				{
 					tmp.TableSchema = reader.GetString(TableSchemaOrdinal);
-				}
+
 				if (reader.IsDBNull(TableNameOrdinal))
-				{
-					tmp.TableName = String.Empty;
-				}
+					tmp.TableName = string.Empty;
 				else
-				{
 					tmp.TableName = reader.GetString(TableNameOrdinal);
-				}
+
 				if (reader.IsDBNull(ColumnNameOrdinal))
-				{
-					tmp.ColumnName = String.Empty;
-				}
+					tmp.ColumnName = string.Empty;
 				else
-				{
 					tmp.ColumnName = reader.GetString(ColumnNameOrdinal);
-				}
+
 				if (reader.IsDBNull(OrdinalPositionOrdinal))
-				{
 					tmp.OrdinalPosition = int.MinValue;
-				}
 				else
-				{
 					tmp.OrdinalPosition = reader.GetInt32(OrdinalPositionOrdinal);
-				}
+
 				if (reader.IsDBNull(ColumnDefaultOrdinal))
-				{
-					tmp.ColumnDefault = String.Empty;
-				}
+					tmp.ColumnDefault = string.Empty;
 				else
-				{
 					tmp.ColumnDefault = reader.GetString(ColumnDefaultOrdinal);
-				}
+
 				if (reader.IsDBNull(IsNullableOrdinal))
-				{
-					tmp.IsNullable = String.Empty;
-				}
+					tmp.IsNullable = string.Empty;
 				else
-				{
 					tmp.IsNullable = reader.GetString(IsNullableOrdinal);
-				}
+
 				if (reader.IsDBNull(DataTypeOrdinal))
-				{
-					tmp.DataType = String.Empty;
-				}
+					tmp.DataType = string.Empty;
 				else
-				{
 					tmp.DataType = reader.GetString(DataTypeOrdinal);
-				}
+
 				if (reader.IsDBNull(CharacterMaximumLengthOrdinal))
-				{
 					tmp.CharacterMaximumLength = int.MinValue;
-				}
 				else
-				{
 					tmp.CharacterMaximumLength = reader.GetInt32(CharacterMaximumLengthOrdinal);
-				}
+
 				if (reader.IsDBNull(CharacterOctetLengthOrdinal))
-				{
 					tmp.CharacterOctetLength = int.MinValue;
-				}
 				else
-				{
 					tmp.CharacterOctetLength = reader.GetInt32(CharacterOctetLengthOrdinal);
-				}
+
 				if (reader.IsDBNull(NumericPrecisionOrdinal))
-				{
 					tmp.NumericPrecision = byte.MinValue;
-				}
 				else
-				{
 					tmp.NumericPrecision = reader.GetByte(NumericPrecisionOrdinal);
-				}
+
 				if (reader.IsDBNull(NumericPrecisionRadixOrdinal))
-				{
 					tmp.NumericPrecisionRadix = short.MinValue;
-				}
 				else
-				{
 					tmp.NumericPrecisionRadix = reader.GetInt16(NumericPrecisionRadixOrdinal);
-				}
+
 				if (reader.IsDBNull(NumericScaleOrdinal))
-				{
 					tmp.NumericScale = int.MinValue;
-				}
 				else
-				{
 					tmp.NumericScale = reader.GetInt32(NumericScaleOrdinal);
-				}
+
 				if (reader.IsDBNull(DatetimePrecisionOrdinal))
-				{
 					tmp.DatetimePrecision = short.MinValue;
-				}
 				else
-				{
 					tmp.DatetimePrecision = reader.GetInt16(DatetimePrecisionOrdinal);
-				}
+
 				if (reader.IsDBNull(CharacterSetCatalogOrdinal))
-				{
-					tmp.CharacterSetCatalog = String.Empty;
-				}
+					tmp.CharacterSetCatalog = string.Empty;
 				else
-				{
 					tmp.CharacterSetCatalog = reader.GetString(CharacterSetCatalogOrdinal);
-				}
+
 				if (reader.IsDBNull(CharacterSetSchemaOrdinal))
-				{
-					tmp.CharacterSetSchema = String.Empty;
-				}
+					tmp.CharacterSetSchema = string.Empty;
 				else
-				{
 					tmp.CharacterSetSchema = reader.GetString(CharacterSetSchemaOrdinal);
-				}
+
 				if (reader.IsDBNull(CharacterSetNameOrdinal))
-				{
-					tmp.CharacterSetName = String.Empty;
-				}
+					tmp.CharacterSetName = string.Empty;
 				else
-				{
 					tmp.CharacterSetName = reader.GetString(CharacterSetNameOrdinal);
-				}
+
 				if (reader.IsDBNull(CollationCatalogOrdinal))
-				{
-					tmp.CollationCatalog = String.Empty;
-				}
+					tmp.CollationCatalog = string.Empty;
 				else
-				{
 					tmp.CollationCatalog = reader.GetString(CollationCatalogOrdinal);
-				}
+
 				if (reader.IsDBNull(CollationSchemaOrdinal))
-				{
-					tmp.CollationSchema = String.Empty;
-				}
+					tmp.CollationSchema = string.Empty;
 				else
-				{
 					tmp.CollationSchema = reader.GetString(CollationSchemaOrdinal);
-				}
+
 				if (reader.IsDBNull(CollationNameOrdinal))
-				{
-					tmp.CollationName = String.Empty;
-				}
+					tmp.CollationName = string.Empty;
 				else
-				{
 					tmp.CollationName = reader.GetString(CollationNameOrdinal);
-				}
+
 				if (reader.IsDBNull(DomainCatalogOrdinal))
-				{
-					tmp.DomainCatalog = String.Empty;
-				}
+					tmp.DomainCatalog = string.Empty;
 				else
-				{
 					tmp.DomainCatalog = reader.GetString(DomainCatalogOrdinal);
-				}
+
 				if (reader.IsDBNull(DomainSchemaOrdinal))
-				{
-					tmp.DomainSchema = String.Empty;
-				}
+					tmp.DomainSchema = string.Empty;
 				else
-				{
 					tmp.DomainSchema = reader.GetString(DomainSchemaOrdinal);
-				}
+
 				if (reader.IsDBNull(DomainNameOrdinal))
-				{
-					tmp.DomainName = String.Empty;
-				}
+					tmp.DomainName = string.Empty;
 				else
-				{
 					tmp.DomainName = reader.GetString(DomainNameOrdinal);
-				}
+
 				result.Add(tmp);
 			}
+
 			if ((result == null))
-			{
-				return new List<SqlServer.InformationSchema.Column>();
-			}
+				return new List<Column>();
+
 			return result;
 		}
 	}

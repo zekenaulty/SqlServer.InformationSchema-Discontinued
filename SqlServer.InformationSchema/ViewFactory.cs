@@ -8,17 +8,17 @@ namespace SqlServer.InformationSchema
 	
 	public class ViewFactory
 	{
-		public static List<SqlServer.InformationSchema.View> FindAll(System.Data.SqlClient.SqlConnection connection)
+		public static List<SqlServer.InformationSchema.View> FindAll(SqlConnection connection)
 		{
 			if ((connection == null))
 			{
-				throw new System.Exception("Connection can not be null/Nothing.");
+				throw new Exception("Connection can not be null/Nothing.");
 			}
 			if ((connection.State != ConnectionState.Open))
 			{
 				connection.Open();
 			}
-			System.Data.SqlClient.SqlDataReader reader = null;
+            SqlDataReader reader = null;
 			try
 			{
 				reader = SqlDb.ExecuteReader(connection, CommandType.Text, "SELECT * FROM INFORMATION_SCHEMA.VIEWS", false);
@@ -33,15 +33,15 @@ namespace SqlServer.InformationSchema
 				}
 			}
 		}
-		public static List<SqlServer.InformationSchema.View> ReadRecords(System.Data.SqlClient.SqlDataReader reader)
+		public static List<SqlServer.InformationSchema.View> ReadRecords(SqlDataReader reader)
 		{
 			if ((reader == null))
 			{
-				throw new System.Exception("Reader can not be null/Nothing.");
+				throw new Exception("Reader can not be null/Nothing.");
 			}
 			if ((reader.HasRows == false))
 			{
-				throw new System.Exception("Reader has no rows.");
+				throw new Exception("Reader has no rows.");
 			}
 			List<SqlServer.InformationSchema.View> result = null;
 			int TableCatalogOrdinal = reader.GetOrdinal("TABLE_CATALOG");
@@ -61,7 +61,7 @@ namespace SqlServer.InformationSchema
 				SqlServer.InformationSchema.View tmp = new SqlServer.InformationSchema.View();
 				if (reader.IsDBNull(TableCatalogOrdinal))
 				{
-					tmp.TableCatalog = String.Empty;
+					tmp.TableCatalog = string.Empty;
 				}
 				else
 				{
@@ -69,7 +69,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(TableSchemaOrdinal))
 				{
-					tmp.TableSchema = String.Empty;
+					tmp.TableSchema = string.Empty;
 				}
 				else
 				{
@@ -77,7 +77,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(TableNameOrdinal))
 				{
-					tmp.TableName = String.Empty;
+					tmp.TableName = string.Empty;
 				}
 				else
 				{
@@ -85,7 +85,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(ViewDefinitionOrdinal))
 				{
-					tmp.ViewDefinition = String.Empty;
+					tmp.ViewDefinition = string.Empty;
 				}
 				else
 				{
@@ -93,7 +93,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(CheckOptionOrdinal))
 				{
-					tmp.CheckOption = String.Empty;
+					tmp.CheckOption = string.Empty;
 				}
 				else
 				{
@@ -101,7 +101,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(IsUpdatableOrdinal))
 				{
-					tmp.IsUpdatable = String.Empty;
+					tmp.IsUpdatable = string.Empty;
 				}
 				else
 				{

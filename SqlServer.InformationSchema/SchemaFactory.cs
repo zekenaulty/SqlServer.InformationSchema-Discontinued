@@ -8,17 +8,17 @@ namespace SqlServer.InformationSchema
 	
 	public class SchemaFactory
 	{
-		public static List<SqlServer.InformationSchema.Schema> FindAll(System.Data.SqlClient.SqlConnection connection)
+		public static List<SqlServer.InformationSchema.Schema> FindAll(SqlConnection connection)
 		{
 			if ((connection == null))
 			{
-				throw new System.Exception("Connection can not be null/Nothing.");
+				throw new Exception("Connection can not be null/Nothing.");
 			}
 			if ((connection.State != ConnectionState.Open))
 			{
 				connection.Open();
 			}
-			System.Data.SqlClient.SqlDataReader reader = null;
+            SqlDataReader reader = null;
 			try
 			{
 				reader = SqlDb.ExecuteReader(connection, CommandType.Text, "SELECT * FROM INFORMATION_SCHEMA.SCHEMATA", false);
@@ -33,15 +33,15 @@ namespace SqlServer.InformationSchema
 				}
 			}
 		}
-		public static List<SqlServer.InformationSchema.Schema> ReadRecords(System.Data.SqlClient.SqlDataReader reader)
+		public static List<SqlServer.InformationSchema.Schema> ReadRecords(SqlDataReader reader)
 		{
 			if ((reader == null))
 			{
-				throw new System.Exception("Reader can not be null/Nothing.");
+				throw new Exception("Reader can not be null/Nothing.");
 			}
 			if ((reader.HasRows == false))
 			{
-				throw new System.Exception("Reader has no rows.");
+				throw new Exception("Reader has no rows.");
 			}
 			List<SqlServer.InformationSchema.Schema> result = null;
 			int CatalogNameOrdinal = reader.GetOrdinal("CATALOG_NAME");
@@ -61,7 +61,7 @@ namespace SqlServer.InformationSchema
 				SqlServer.InformationSchema.Schema tmp = new SqlServer.InformationSchema.Schema();
 				if (reader.IsDBNull(CatalogNameOrdinal))
 				{
-					tmp.CatalogName = String.Empty;
+					tmp.CatalogName = string.Empty;
 				}
 				else
 				{
@@ -69,7 +69,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(SchemaNameOrdinal))
 				{
-					tmp.SchemaName = String.Empty;
+					tmp.SchemaName = string.Empty;
 				}
 				else
 				{
@@ -77,7 +77,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(SchemaOwnerOrdinal))
 				{
-					tmp.SchemaOwner = String.Empty;
+					tmp.SchemaOwner = string.Empty;
 				}
 				else
 				{
@@ -85,7 +85,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(DefaultCharacterSetCatalogOrdinal))
 				{
-					tmp.DefaultCharacterSetCatalog = String.Empty;
+					tmp.DefaultCharacterSetCatalog = string.Empty;
 				}
 				else
 				{
@@ -93,7 +93,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(DefaultCharacterSetSchemaOrdinal))
 				{
-					tmp.DefaultCharacterSetSchema = String.Empty;
+					tmp.DefaultCharacterSetSchema = string.Empty;
 				}
 				else
 				{
@@ -101,7 +101,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(DefaultCharacterSetNameOrdinal))
 				{
-					tmp.DefaultCharacterSetName = String.Empty;
+					tmp.DefaultCharacterSetName = string.Empty;
 				}
 				else
 				{

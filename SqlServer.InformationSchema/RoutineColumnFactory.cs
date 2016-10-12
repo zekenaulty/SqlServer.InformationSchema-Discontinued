@@ -8,17 +8,17 @@ namespace SqlServer.InformationSchema
 	
 	public class RoutineColumnFactory
 	{
-		public static List<SqlServer.InformationSchema.RoutineColumn> FindAll(System.Data.SqlClient.SqlConnection connection)
+		public static List<SqlServer.InformationSchema.RoutineColumn> FindAll(SqlConnection connection)
 		{
 			if ((connection == null))
 			{
-				throw new System.Exception("Connection can not be null/Nothing.");
+				throw new Exception("Connection can not be null/Nothing.");
 			}
 			if ((connection.State != ConnectionState.Open))
 			{
 				connection.Open();
 			}
-			System.Data.SqlClient.SqlDataReader reader = null;
+            SqlDataReader reader = null;
 			try
 			{
 				reader = SqlDb.ExecuteReader(connection, CommandType.Text, "SELECT * FROM INFORMATION_SCHEMA.ROUTINE_COLUMNS", false);
@@ -33,15 +33,15 @@ namespace SqlServer.InformationSchema
 				}
 			}
 		}
-		public static List<SqlServer.InformationSchema.RoutineColumn> ReadRecords(System.Data.SqlClient.SqlDataReader reader)
+		public static List<SqlServer.InformationSchema.RoutineColumn> ReadRecords(SqlDataReader reader)
 		{
 			if ((reader == null))
 			{
-				throw new System.Exception("Reader can not be null/Nothing.");
+				throw new Exception("Reader can not be null/Nothing.");
 			}
 			if ((reader.HasRows == false))
 			{
-				throw new System.Exception("Reader has no rows.");
+				throw new Exception("Reader has no rows.");
 			}
 			List<SqlServer.InformationSchema.RoutineColumn> result = null;
 			int TableCatalogOrdinal = reader.GetOrdinal("TABLE_CATALOG");
@@ -78,7 +78,7 @@ namespace SqlServer.InformationSchema
 				SqlServer.InformationSchema.RoutineColumn tmp = new SqlServer.InformationSchema.RoutineColumn();
 				if (reader.IsDBNull(TableCatalogOrdinal))
 				{
-					tmp.TableCatalog = String.Empty;
+					tmp.TableCatalog = string.Empty;
 				}
 				else
 				{
@@ -86,7 +86,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(TableSchemaOrdinal))
 				{
-					tmp.TableSchema = String.Empty;
+					tmp.TableSchema = string.Empty;
 				}
 				else
 				{
@@ -94,7 +94,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(TableNameOrdinal))
 				{
-					tmp.TableName = String.Empty;
+					tmp.TableName = string.Empty;
 				}
 				else
 				{
@@ -102,7 +102,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(ColumnNameOrdinal))
 				{
-					tmp.ColumnName = String.Empty;
+					tmp.ColumnName = string.Empty;
 				}
 				else
 				{
@@ -118,7 +118,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(ColumnDefaultOrdinal))
 				{
-					tmp.ColumnDefault = String.Empty;
+					tmp.ColumnDefault = string.Empty;
 				}
 				else
 				{
@@ -126,7 +126,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(IsNullableOrdinal))
 				{
-					tmp.IsNullable = String.Empty;
+					tmp.IsNullable = string.Empty;
 				}
 				else
 				{
@@ -134,7 +134,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(DataTypeOrdinal))
 				{
-					tmp.DataType = String.Empty;
+					tmp.DataType = string.Empty;
 				}
 				else
 				{
@@ -190,7 +190,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(CharacterSetCatalogOrdinal))
 				{
-					tmp.CharacterSetCatalog = String.Empty;
+					tmp.CharacterSetCatalog = string.Empty;
 				}
 				else
 				{
@@ -198,7 +198,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(CharacterSetSchemaOrdinal))
 				{
-					tmp.CharacterSetSchema = String.Empty;
+					tmp.CharacterSetSchema = string.Empty;
 				}
 				else
 				{
@@ -206,7 +206,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(CharacterSetNameOrdinal))
 				{
-					tmp.CharacterSetName = String.Empty;
+					tmp.CharacterSetName = string.Empty;
 				}
 				else
 				{
@@ -214,7 +214,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(CollationCatalogOrdinal))
 				{
-					tmp.CollationCatalog = String.Empty;
+					tmp.CollationCatalog = string.Empty;
 				}
 				else
 				{
@@ -222,7 +222,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(CollationSchemaOrdinal))
 				{
-					tmp.CollationSchema = String.Empty;
+					tmp.CollationSchema = string.Empty;
 				}
 				else
 				{
@@ -230,7 +230,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(CollationNameOrdinal))
 				{
-					tmp.CollationName = String.Empty;
+					tmp.CollationName = string.Empty;
 				}
 				else
 				{
@@ -238,7 +238,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(DomainCatalogOrdinal))
 				{
-					tmp.DomainCatalog = String.Empty;
+					tmp.DomainCatalog = string.Empty;
 				}
 				else
 				{
@@ -246,7 +246,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(DomainSchemaOrdinal))
 				{
-					tmp.DomainSchema = String.Empty;
+					tmp.DomainSchema = string.Empty;
 				}
 				else
 				{
@@ -254,7 +254,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(DomainNameOrdinal))
 				{
-					tmp.DomainName = String.Empty;
+					tmp.DomainName = string.Empty;
 				}
 				else
 				{

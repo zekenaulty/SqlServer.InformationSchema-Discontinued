@@ -8,17 +8,17 @@ namespace SqlServer.InformationSchema
 	
 	public class ViewTableUsageFactory
 	{
-		public static List<SqlServer.InformationSchema.ViewTableUsage> FindAll(System.Data.SqlClient.SqlConnection connection)
+		public static List<SqlServer.InformationSchema.ViewTableUsage> FindAll(SqlConnection connection)
 		{
 			if ((connection == null))
 			{
-				throw new System.Exception("Connection can not be null/Nothing.");
+				throw new Exception("Connection can not be null/Nothing.");
 			}
 			if ((connection.State != ConnectionState.Open))
 			{
 				connection.Open();
 			}
-			System.Data.SqlClient.SqlDataReader reader = null;
+            SqlDataReader reader = null;
 			try
 			{
 				reader = SqlDb.ExecuteReader(connection, CommandType.Text, "SELECT * FROM INFORMATION_SCHEMA.VIEW_TABLE_USAGE", false);
@@ -33,15 +33,15 @@ namespace SqlServer.InformationSchema
 				}
 			}
 		}
-		public static List<SqlServer.InformationSchema.ViewTableUsage> ReadRecords(System.Data.SqlClient.SqlDataReader reader)
+		public static List<SqlServer.InformationSchema.ViewTableUsage> ReadRecords(SqlDataReader reader)
 		{
 			if ((reader == null))
 			{
-				throw new System.Exception("Reader can not be null/Nothing.");
+				throw new Exception("Reader can not be null/Nothing.");
 			}
 			if ((reader.HasRows == false))
 			{
-				throw new System.Exception("Reader has no rows.");
+				throw new Exception("Reader has no rows.");
 			}
 			List<SqlServer.InformationSchema.ViewTableUsage> result = null;
 			int ViewCatalogOrdinal = reader.GetOrdinal("VIEW_CATALOG");
@@ -61,7 +61,7 @@ namespace SqlServer.InformationSchema
 				SqlServer.InformationSchema.ViewTableUsage tmp = new SqlServer.InformationSchema.ViewTableUsage();
 				if (reader.IsDBNull(ViewCatalogOrdinal))
 				{
-					tmp.ViewCatalog = String.Empty;
+					tmp.ViewCatalog = string.Empty;
 				}
 				else
 				{
@@ -69,7 +69,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(ViewSchemaOrdinal))
 				{
-					tmp.ViewSchema = String.Empty;
+					tmp.ViewSchema = string.Empty;
 				}
 				else
 				{
@@ -77,7 +77,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(ViewNameOrdinal))
 				{
-					tmp.ViewName = String.Empty;
+					tmp.ViewName = string.Empty;
 				}
 				else
 				{
@@ -85,7 +85,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(TableCatalogOrdinal))
 				{
-					tmp.TableCatalog = String.Empty;
+					tmp.TableCatalog = string.Empty;
 				}
 				else
 				{
@@ -93,7 +93,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(TableSchemaOrdinal))
 				{
-					tmp.TableSchema = String.Empty;
+					tmp.TableSchema = string.Empty;
 				}
 				else
 				{
@@ -101,7 +101,7 @@ namespace SqlServer.InformationSchema
 				}
 				if (reader.IsDBNull(TableNameOrdinal))
 				{
-					tmp.TableName = String.Empty;
+					tmp.TableName = string.Empty;
 				}
 				else
 				{
