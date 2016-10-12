@@ -123,7 +123,7 @@ namespace SqlServer.InformationSchema
 				}
 				else
 				{
-					tmp.OrdinalPosition = reader.GetInt(OrdinalPositionOrdinal);
+					tmp.OrdinalPosition = reader.GetInt32(OrdinalPositionOrdinal);
 				}
 				result.Add(tmp);
 			}

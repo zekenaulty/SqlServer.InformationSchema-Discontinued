@@ -112,7 +112,7 @@ namespace SqlServer.InformationSchema
 				}
 				else
 				{
-					tmp.OrdinalPosition = reader.GetInt(OrdinalPositionOrdinal);
+					tmp.OrdinalPosition = reader.GetInt32(OrdinalPositionOrdinal);
 				}
 				if (reader.IsDBNull(ParameterModeOrdinal))
 				{
@@ -160,7 +160,7 @@ namespace SqlServer.InformationSchema
 				}
 				else
 				{
-					tmp.CharacterMaximumLength = reader.GetInt(CharacterMaximumLengthOrdinal);
+					tmp.CharacterMaximumLength = reader.GetInt32(CharacterMaximumLengthOrdinal);
 				}
 				if (reader.IsDBNull(CharacterOctetLengthOrdinal))
 				{
@@ -168,7 +168,7 @@ namespace SqlServer.InformationSchema
 				}
 				else
 				{
-					tmp.CharacterOctetLength = reader.GetInt(CharacterOctetLengthOrdinal);
+					tmp.CharacterOctetLength = reader.GetInt32(CharacterOctetLengthOrdinal);
 				}
 				if (reader.IsDBNull(CollationCatalogOrdinal))
 				{
@@ -232,7 +232,7 @@ namespace SqlServer.InformationSchema
 				}
 				else
 				{
-					tmp.NumericPrecisionRadix = reader.GetShort(NumericPrecisionRadixOrdinal);
+					tmp.NumericPrecisionRadix = reader.GetInt16(NumericPrecisionRadixOrdinal);
 				}
 				if (reader.IsDBNull(NumericScaleOrdinal))
 				{
@@ -240,7 +240,7 @@ namespace SqlServer.InformationSchema
 				}
 				else
 				{
-					tmp.NumericScale = reader.GetInt(NumericScaleOrdinal);
+					tmp.NumericScale = reader.GetInt32(NumericScaleOrdinal);
 				}
 				if (reader.IsDBNull(DatetimePrecisionOrdinal))
 				{
@@ -248,7 +248,7 @@ namespace SqlServer.InformationSchema
 				}
 				else
 				{
-					tmp.DatetimePrecision = reader.GetShort(DatetimePrecisionOrdinal);
+					tmp.DatetimePrecision = reader.GetInt16(DatetimePrecisionOrdinal);
 				}
 				if (reader.IsDBNull(IntervalTypeOrdinal))
 				{
@@ -264,7 +264,7 @@ namespace SqlServer.InformationSchema
 				}
 				else
 				{
-					tmp.IntervalPrecision = reader.GetShort(IntervalPrecisionOrdinal);
+					tmp.IntervalPrecision = reader.GetInt16(IntervalPrecisionOrdinal);
 				}
 				if (reader.IsDBNull(UserDefinedTypeCatalogOrdinal))
 				{
