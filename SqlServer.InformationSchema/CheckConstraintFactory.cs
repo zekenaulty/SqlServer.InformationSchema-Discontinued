@@ -50,8 +50,9 @@ namespace SqlServer.InformationSchema
         /// Read INFORMATION_SCHEMA.CHECK_CONSTRAINTS from the in passed SqlServerConnection for a specific schema.
         /// </summary>
         /// <param name="connection"></param>
+        /// <param name="schemaName"></param>
         /// <returns>List<CheckConstraint></returns>
-		public static List<CheckConstraint> FindBySchema(SqlConnection connection, string schema)
+		public static List<CheckConstraint> FindBySchema(SqlConnection connection, string schemaName)
         {
             if ((connection == null))
                 throw new Exception("Connection can not be null/Nothing.");
@@ -65,9 +66,9 @@ namespace SqlServer.InformationSchema
             {
                 reader = SqlDb.ExecuteReader(
                     connection, 
-                    CommandType.Text, 
-                    "SELECT * FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS WHERE CONSTRAINT_SCHEMA = @schema", 
-                    new SqlParameter("@schema", schema));
+                    CommandType.Text,
+                    "SELECT * FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS WHERE CONSTRAINT_SCHEMA = @schemaName", 
+                    new SqlParameter("@schemaName", schemaName));
 
                 return ReadRecords(reader);
             }
@@ -85,8 +86,10 @@ namespace SqlServer.InformationSchema
         /// Read INFORMATION_SCHEMA.CHECK_CONSTRAINTS from the in passed SqlServerConnection for a specific schema and name.
         /// </summary>
         /// <param name="connection"></param>
+        /// <param name="schemaName"></param>
+        /// <param name="constraintName"></param>
         /// <returns>List<CheckConstraint></returns>
-		public static List<CheckConstraint> FindByName(SqlConnection connection, string schema, string name)
+		public static List<CheckConstraint> FindByName(SqlConnection connection, string schemaName, string constraintName)
         {
             if ((connection == null))
                 throw new Exception("Connection can not be null/Nothing.");
@@ -101,9 +104,9 @@ namespace SqlServer.InformationSchema
                 reader = SqlDb.ExecuteReader(
                     connection, 
                     CommandType.Text, 
-                    "SELECT * FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS WHERE CONSTRAINT_SCHEMA = @schema AND CONSTRAINT_NAME = @constraintName", 
-                    new SqlParameter("@schema", schema), 
-                    new SqlParameter("@constraintName", name));
+                    "SELECT * FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS WHERE CONSTRAINT_SCHEMA = @schemaName AND CONSTRAINT_NAME = @constraintName", 
+                    new SqlParameter("@schemaName", schemaName), 
+                    new SqlParameter("@constraintName", constraintName));
 
                 return ReadRecords(reader);
             }

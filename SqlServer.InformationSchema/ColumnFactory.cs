@@ -6,8 +6,17 @@ namespace SqlServer.InformationSchema
 	using System.Data.SqlClient;
 	using System.Linq;
 	
+    /// <summary>
+    /// Query INFORMATION_SCHEMA.COLUMNS and create SqlServer.InformationSchema.Column entities from the results.
+    /// </summary>
 	public class ColumnFactory
 	{
+
+        /// <summary>
+        /// Find all columns in the database available to the logged in user.
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <returns></returns>
 		public static List<Column> FindAll(SqlConnection connection)
 		{
 			if ((connection == null))
@@ -19,7 +28,12 @@ namespace SqlServer.InformationSchema
             SqlDataReader reader = null;
 			try
 			{
-				reader = SqlDb.ExecuteReader(connection, CommandType.Text, "SELECT * FROM INFORMATION_SCHEMA.COLUMNS", false);
+				reader = SqlDb.ExecuteReader(
+                    connection, 
+                    CommandType.Text, 
+                    "SELECT * FROM INFORMATION_SCHEMA.COLUMNS ORDER BY TABLE_SCHEMA, TABLE_NAME, ORDINAL_POSITION", 
+                    false);
+
 				return ReadRecords(reader);
 			}
 			finally
@@ -32,7 +46,88 @@ namespace SqlServer.InformationSchema
 			}
 		}
 
-		public static List<Column> ReadRecords(SqlDataReader reader)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <param name="schemaName"></param>
+        /// <param name="tableName"></param>
+        /// <returns></returns>
+        public static List<Column> FindByTable(SqlConnection connection, string schemaName, string tableName)
+        {
+            if ((connection == null))
+                throw new Exception("Connection can not be null/Nothing.");
+
+            if ((connection.State != ConnectionState.Open))
+                connection.Open();
+
+            SqlDataReader reader = null;
+            try
+            {
+                reader = SqlDb.ExecuteReader(
+                    connection, 
+                    CommandType.Text,
+                    "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = @schemaName AND TABLE_NAME = @tableName ORDER BY TABLE_SCHEMA, TABLE_NAME, ORDINAL_POSITION", 
+                    new SqlParameter("@schemaName", schemaName), 
+                    new SqlParameter("@tableName", tableName));
+
+                return ReadRecords(reader);
+            }
+            finally
+            {
+                if ((reader != null))
+                {
+                    reader.Close();
+                    reader = null;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <param name="schemaName"></param>
+        /// <param name="tableName"></param>
+        /// <param name="columnName"></param>
+        /// <returns></returns>
+        public static List<Column> FindByColumn(SqlConnection connection, string schemaName, string tableName, string columnName)
+        {
+            if ((connection == null))
+                throw new Exception("Connection can not be null/Nothing.");
+
+            if ((connection.State != ConnectionState.Open))
+                connection.Open();
+
+            SqlDataReader reader = null;
+            try
+            {
+                reader = SqlDb.ExecuteReader(
+                    connection,
+                    CommandType.Text,
+                    "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = @schemaName AND TABLE_NAME = @tableName AND COLUMN_NAME = @columnName ORDER BY TABLE_SCHEMA, TABLE_NAME, ORDINAL_POSITION",
+                    new SqlParameter("@schemaName", schemaName),
+                    new SqlParameter("@tableName", tableName),
+                    new SqlParameter("@columnName", columnName));
+
+                return ReadRecords(reader);
+            }
+            finally
+            {
+                if ((reader != null))
+                {
+                    reader.Close();
+                    reader = null;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Read records from an in passed SqlDataReader into a list of SqlServer.InformationSchema.Column(s)
+        /// </summary>
+        /// <param name="reader">SqlDataReader</param>
+        /// <returns>List<Column></returns>
+        public static List<Column> ReadRecords(SqlDataReader reader)
 		{
 			if ((reader == null))
 				throw new Exception("Reader can not be null/Nothing.");

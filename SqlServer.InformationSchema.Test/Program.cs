@@ -23,7 +23,7 @@ namespace SqlServer.InformationSchema.Test
         {
 
             Console.BufferWidth = 3000;
-            Console.BufferHeight = 10000;
+            Console.BufferHeight = short.MaxValue-1;
             Console.WindowWidth = Console.LargestWindowWidth - 100;
             Console.WindowHeight = Console.LargestWindowHeight - 40;
 
@@ -48,7 +48,20 @@ namespace SqlServer.InformationSchema.Test
                 }
                 #endregion
                 #region COLUMNS
+                if(RunTestSection("COLUMNS"))
+                {
+                    TestColumns.FindByTable(connection, "HumanResources", "Department");
+                    EnterForNext();
 
+                    TestColumns.FindByColumn(connection, "Production", "ProductCategory", "Name");
+                    EnterForNext();
+
+                    if(RunTestSection("Columns FindAll"))
+                    {
+                        TestColumns.FindAll(connection);
+                        EnterForNext();
+                    }
+                }
                 #endregion
             }
 
