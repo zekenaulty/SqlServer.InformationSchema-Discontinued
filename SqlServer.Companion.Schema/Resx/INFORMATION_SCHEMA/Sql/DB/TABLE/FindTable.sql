@@ -1,0 +1,11 @@
+SELECT
+	tblTables.TABLE_CATALOG,
+	tblTables.TABLE_SCHEMA,
+	tblTables.TABLE_NAME,
+	tblTables.TABLE_TYPE
+FROM 
+	INFORMATION_SCHEMA.TABLES AS tblTables
+WHERE
+	tblTables.TABLE_TYPE ='BASE TABLE' 
+AND 
+	tblTables.TABLE_NAME = '@TableName'

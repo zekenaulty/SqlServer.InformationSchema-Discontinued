@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82065662-5252-4F72-852B-098453D58157}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>SqlServer.Companion.Schema</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SqlServer.Companion</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Drawing.Design">
+      <Name>System.Drawing.Design</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\SqlServer\SqlServer.Companion.csproj">
+      <Name>SqlServer.Companion</Name>
+      <Project>{951B6998-A347-41EE-8CAD-CD2482DD1D0C}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Console\BaseConsole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Console\Shell.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Err.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Resx\Reader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\ISqlSchemaObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbCheckConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbCheckConstraintCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbConstraintBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbFieldBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbPrivilegeBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbReferentialConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbReferentialConstraintCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbRoutine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbRoutineBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbRoutineCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbRoutineField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbRoutineFieldCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbRoutineParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbRoutineParameterCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTableBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTableCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTableConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTableConstraintBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTableConstraintCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTableField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTableFieldBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTableFieldCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTableFieldConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTableFieldConstraintCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTableFieldPrivilege.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTableFieldPrivilegeCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTableForeignKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTablePrimaryKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTablePrivilege.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbTablePrivilegeCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbViewCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbViewField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlDbViewFieldCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlSchema.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schema\SqlSchemaCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SqlJoinObject.cs" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\CHECK_CONSTRAINTS.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\COLUMNS.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\COLUMN_DOMAIN_USAGE.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\COLUMN_PRIVILEGES.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\CONSTRAINT_COLUMN_USAGE.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\CONSTRAINT_TABLE_USAGE.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\KEY_COLUMN_USAGE.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\PARAMETERS.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\REFERENTIAL_CONSTRAINTS.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\ROUTINES.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\ROUTINE_COLUMNS.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\SCHEMATA.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\TABLES.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\TABLE_CONSTRAINTS.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\TABLE_PRIVILEGES.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\VIEWS.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\VIEW_COLUMN_USAGE.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Html\VIEW_TABLE_USAGE.htm" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\CONSTRAINT\FindCheckConstraint.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\CONSTRAINT\FindCheckConstraints.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\CONSTRAINT\FindReferentialConstraint.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\CONSTRAINT\FindReferentialConstraintByConstraint.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\CONSTRAINT\FindReferentialConstraints.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\CONSTRAINT\FindReferentialConstraintsAll.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\CONSTRAINT\FindReferentialConstraintsGlobal.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\FindDb.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\ROUTINE\COLUMN\FindRoutineColumn.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\ROUTINE\COLUMN\FindRoutineColumns.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\ROUTINE\FindRoutine.Complete.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\ROUTINE\FindRoutine.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\ROUTINE\FindRoutines.Complete.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\ROUTINE\FindRoutines.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\ROUTINE\PARAMETER\FindRoutineParameter.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\ROUTINE\PARAMETER\FindRoutineParameters.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\TABLE\COLUMN\CONSTRAINT\FindCheckConstraints.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\TABLE\COLUMN\CONSTRAINT\FindConstraintColumnUsage.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\TABLE\COLUMN\CONSTRAINT\FindConstraintColumnUsageByConstraint.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\TABLE\COLUMN\CONSTRAINT\FindConstraintColumnUsages.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\TABLE\COLUMN\FindTableColumn.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\TABLE\COLUMN\FindTableColumns.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\TABLE\COLUMN\PRIVILEGE\FindColumnPrivileges.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\TABLE\CONSTRAINT\FindReferentialConstraints.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\TABLE\CONSTRAINT\FindTableCheckConstraint.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\TABLE\CONSTRAINT\FindTableCheckConstraints.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\TABLE\FindTable.Complete.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\TABLE\FindTable.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\TABLE\FindTables.Complete.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\TABLE\FindTables.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\TABLE\PRIVILEGE\FindTablePrivileges.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\VIEW\COLUMN\FindViewField.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\VIEW\COLUMN\FindViewFields.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\VIEW\FindView.Complete.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\VIEW\FindView.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\VIEW\FindViews.Complete.sql" />
+    <EmbeddedResource Include="Resx\INFORMATION_SCHEMA\Sql\DB\VIEW\FindViews.sql" />
+    <Content Include="Resx\INFORMATION_SCHEMA\Html\CONSTRAINTS.htm" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

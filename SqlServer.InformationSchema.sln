@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServer.InformationSchema", "SqlServer.InformationSchema\SqlServer.InformationSchema.csproj", "{23C77167-9EC7-493A-B170-BCCEF43FD28C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServer.InformationSchema.Test", "SqlServer.InformationSchema.Test\SqlServer.InformationSchema.Test.csproj", "{C403EE93-F394-4AD7-9B52-5A9E9188EB2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServer.Companion.CodeDom", "SqlServer.Companion.CodeDom\SqlServer.Companion.CodeDom.csproj", "{9AACE55D-7A08-4A60-A650-0A444CD75021}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServer.Companion", "SqlServer\SqlServer.Companion.csproj", "{951B6998-A347-41EE-8CAD-CD2482DD1D0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServer.Companion.Schema", "SqlServer.Companion.Schema\SqlServer.Companion.Schema.csproj", "{82065662-5252-4F72-852B-098453D58157}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServer.Companion.v3.07", "SqlServer.Companion.v3.28\SqlServer.Companion.v3.07.csproj", "{1DFD0D6D-57A0-4E57-9490-EDAB5437FBAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +29,27 @@ Global
 		{C403EE93-F394-4AD7-9B52-5A9E9188EB2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C403EE93-F394-4AD7-9B52-5A9E9188EB2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C403EE93-F394-4AD7-9B52-5A9E9188EB2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AACE55D-7A08-4A60-A650-0A444CD75021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AACE55D-7A08-4A60-A650-0A444CD75021}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AACE55D-7A08-4A60-A650-0A444CD75021}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AACE55D-7A08-4A60-A650-0A444CD75021}.Release|Any CPU.Build.0 = Release|Any CPU
+		{951B6998-A347-41EE-8CAD-CD2482DD1D0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{951B6998-A347-41EE-8CAD-CD2482DD1D0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{951B6998-A347-41EE-8CAD-CD2482DD1D0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{951B6998-A347-41EE-8CAD-CD2482DD1D0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82065662-5252-4F72-852B-098453D58157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82065662-5252-4F72-852B-098453D58157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82065662-5252-4F72-852B-098453D58157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82065662-5252-4F72-852B-098453D58157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DFD0D6D-57A0-4E57-9490-EDAB5437FBAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DFD0D6D-57A0-4E57-9490-EDAB5437FBAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DFD0D6D-57A0-4E57-9490-EDAB5437FBAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DFD0D6D-57A0-4E57-9490-EDAB5437FBAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B9AAAF5-B7CD-4062-8408-2BD90AF2885E}
 	EndGlobalSection
 EndGlobal

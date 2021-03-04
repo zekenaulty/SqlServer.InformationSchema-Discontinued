@@ -1,0 +1,339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="ProgId" content="VisualStudio.HTML">
+		<meta name="Originator" content="Microsoft Visual Studio .NET 7.1">
+	</head>
+	<body>
+		<H1><A name="_routines_(t-sql)"></A>ROUTINES</H1>
+		<P>Contains one row for each stored procedure and function accessible to the 
+			current user in the current database. The columns that describe the return 
+			value apply only to functions. For stored procedures, these columns will be 
+			NULL.</P>
+		<P>The <B>INFORMATION_SCHEMA.ROUTINES</B> view is based on the <B>sysobjects</B> and
+			<B>syscolumns</B> system tables.</P>
+		<P>To retrieve information from these views, specify the fully qualified name of <B>INFORMATION_SCHEMA</B>
+			<I>view_name.</I></P>
+		<P class="indent"><!--NOTE--></P>
+		<IMG style="MARGIN-LEFT: 0em" height="11" alt="" src="http://msdn.microsoft.com/library/en-us/tsqlref/Basics/note.gif"
+			width="12" border="0">
+		<P style="MARGIN-TOP: -1.1em; MARGIN-LEFT: 1.5em"><B>Note</B>&nbsp;&nbsp;The <B>ROUTINE_DEFINITION</B>
+			column contains the source statements that created the function, stored 
+			procedure, or trigger. These source statements are likely to contain embedded 
+			carriage returns. If you are returning this column to an application that is 
+			displaying the results in a text format, the embedded carriage returns in the <B>ROUTINE_DEFINITION</B>
+			results may affect the formatting of the overall result set. If you select the <B>ROUTINE_DEFINITION</B>
+			column, you must adjust for the embedded carriage returns; for example, by 
+			returning the result set into a grid or returning <B>ROUTINE_DEFINITION</B> into 
+			its own text box.</P> <!--/NOTE-->
+		<P></P>
+		<TABLE id="Table1" cols="3" cellPadding="2" rules="all" width="595" border="1" frame="box">
+			<TR vAlign="top">
+				<TH class="label" width="29%">
+					Column name</TH>
+				<TH class="label" width="22%">
+					Data type</TH>
+				<TH class="label" width="49%">
+					Description</TH></TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>SPECIFIC_CATALOG</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">Specific name of the catalog.
+					<P>For SQL Server 2000, this name is the same as <B>ROUTINE_CATALOG</B>.</P>
+				</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>SPECIFIC_SCHEMA</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">Specific name of the catalog.
+					<P>For SQL Server 2000, this is the same as <B>ROUTINE_SCHEMA</B>.</P>
+				</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>SPECIFIC_NAME</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">Specific name of the catalog.
+					<P>For SQL Server 2000, this is the same as <B>ROUTINE_NAME</B>.</P>
+				</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>ROUTINE_CATALOG</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">Catalog name of the function.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>ROUTINE_SCHEMA</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">Owner name of the function.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>ROUTINE_NAME</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">Name of the function.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>ROUTINE_TYPE</B></TD>
+				<TD width="22%"><B>nvarchar(20)</B></TD>
+				<TD width="49%">Returns PROCEDURE for stored procedures, and FUNCTION for 
+					functions.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>MODULE_CATALOG</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>MODULE_SCHEMA</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>MODULE_NAME</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>UDT_CATALOG</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>UDT_SCHEMA</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>UDT_NAME</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>DATA_TYPE</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">Data type of the return value of the function. Returns <B>table</B> 
+					if a table-valued function.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>CHARACTER_MAXIMUM_LENGTH</B></TD>
+				<TD width="22%"><B>int</B></TD>
+				<TD width="49%">Maximum length in characters, if the return type is a character 
+					type.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>CHARACTER_OCTET_LENGTH</B></TD>
+				<TD width="22%"><B>int</B></TD>
+				<TD width="49%">Maximum length in bytes, if the return type is a character type.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>COLLATION_CATALOG</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">In SQL Server 2000 always returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>COLLATION_SCHEMA</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">In SQL Server 2000 always returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>COLLATION_NAME</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">Collation name of the return value. For noncharacter types, returns 
+					NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>CHARACTER_SET_CATALOG</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">In SQL Server 2000 always returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>CHARACTER_SET_SCHEMA</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">In SQL Server 2000 always returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>CHARACTER_SET_NAME</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">Name of the return value's character set. For noncharacter types, 
+					returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>NUMERIC_PRECISION</B></TD>
+				<TD width="22%"><B>smallint</B></TD>
+				<TD width="49%">Numeric precision of the return value. For the nonnumeric types, 
+					returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>NUMERIC_PRECISION_RADIX</B></TD>
+				<TD width="22%"><B>smallint</B></TD>
+				<TD width="49%">Numeric precision radix of the return value. For nonnumeric types, 
+					returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>NUMERIC_SCALE</B></TD>
+				<TD width="22%"><B>smallint</B></TD>
+				<TD width="49%">Scale of the return value. For nonnumeric types, returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>DATETIME_PRECISION</B></TD>
+				<TD width="22%"><B>smallint</B></TD>
+				<TD width="49%">Fractional precision of a second if return value is of type <B>datetime</B>. 
+					Otherwise, returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>INTERVAL_TYPE</B></TD>
+				<TD width="22%"><B>nvarchar(30)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>INTERVAL_PRECISION</B></TD>
+				<TD width="22%"><B>smallint</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>TYPE_UDT_CATALOG</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>TYPE_UDT_SCHEMA</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>TYPE_UDT_NAME</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>SCOPE_CATALOG</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>SCOPE_SCHEMA</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>SCOPE_NAME</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>MAXIMUM_CARDINALITY</B></TD>
+				<TD width="22%"><B>bigint</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>DTD_IDENTIFIER</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>ROUTINE_BODY</B></TD>
+				<TD width="22%"><B>nvarchar(30)</B></TD>
+				<TD width="49%">Returns SQL for a Transact-SQL function, and EXTERNAL for an 
+					externally written function.
+					<P>In SQL Server 2000, functions will always be SQL.</P>
+				</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>ROUTINE_DEFINITION</B></TD>
+				<TD width="22%"><B>nvarchar(4000)</B></TD>
+				<TD width="49%">Definition text of the function or stored procedure if the function 
+					or stored procedure is not encrypted. Otherwise, returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>EXTERNAL_NAME</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>EXTERNAL_LANGUAGE</B></TD>
+				<TD width="22%"><B>nvarchar(30)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>PARAMETER_STYLE</B></TD>
+				<TD width="22%"><B>nvarchar(30)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>IS_DETERMINISTIC</B></TD>
+				<TD width="22%"><B>nvarchar(10)</B></TD>
+				<TD width="49%">Returns YES if the routine is deterministic.
+					<P>Returns NO if the routine is nondeterministic.</P>
+					<P>Always returns NO for stored procedures.</P>
+				</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>SQL_DATA_ACCESS</B></TD>
+				<TD width="22%"><B>nvarchar(30)</B></TD>
+				<TD width="49%">Returns one of the following four values:
+					<P>NONE = The function does not contain SQL.<BR>
+						CONTAINS = The function possibly contains SQL.<BR>
+						READS = The function possibly reads SQL data.<BR>
+						MODIFIES = The function possibly modifies SQL data.</P>
+					<P>In SQL Server 2000, returns READS for all functions, and MODIFIES for all stored 
+						procedures.</P>
+				</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>IS_NULL_CALL</B></TD>
+				<TD width="22%"><B>nvarchar(10)</B></TD>
+				<TD width="49%">Indicates if the routine will be called if any of its arguments are 
+					NULL.
+					<P>In SQL Server 2000, always returns YES.</P>
+				</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>SQL_PATH</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="49%">NULL. Reserved for future use.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>SCHEMA_LEVEL_ROUTINE</B></TD>
+				<TD width="22%"><B>nvarchar(10)</B></TD>
+				<TD width="49%">Returns YES if schema-level function, or NO if not a schema-level 
+					function.
+					<P>In SQL Server 2000, always returns YES.</P>
+				</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>MAX_DYNAMIC_RESULT_SETS</B></TD>
+				<TD width="22%"><B>smallint</B></TD>
+				<TD width="49%">Maximum number of dynamic result sets returned by routine.
+					<P>Returns 0 if functions, and TBD if stored procedures.</P>
+				</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>IS_USER_DEFINED_CAST</B></TD>
+				<TD width="22%"><B>nvarchar(10)</B></TD>
+				<TD width="49%">Returns YES if user-defined cast function, and NO if not a 
+					user-defined cast function.
+					<P>In SQL Server 2000, always returns NO.</P>
+				</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>IS_IMPLICITLY_INVOCABLE</B></TD>
+				<TD width="22%"><B>nvarchar(10)</B></TD>
+				<TD width="49%">Returns YES if the routine is implicitly invocable, and NO if 
+					function is not implicitly invocable.
+					<P>In SQL Server 2000, always returns NO.</P>
+				</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>CREATED</B></TD>
+				<TD width="22%"><B>datetime</B></TD>
+				<TD width="49%">Time the routine was created.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="29%"><B>LAST_ALTERED</B></TD>
+				<TD width="22%"><B>datetime</B></TD>
+				<TD width="49%">
+				The last time the function was modified.</TR>
+		</TABLE>
+	</body>
+</html>

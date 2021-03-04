@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="ProgId" content="VisualStudio.HTML">
+		<meta name="Originator" content="Microsoft Visual Studio .NET 7.1">
+	</head>
+	<body>
+		<H1><A name="_routines_columns_(t-sql)"></A>ROUTINE_COLUMNS</H1>
+		<P>Contains one row for each column returned by the table-valued functions 
+			accessible to the current user in the current database.</P>
+		<P>The <B>INFORMATION_SCHEMA.ROUTINE_COLUMNS </B>view is based on the <B>sysobjects</B>
+			and <B>syscolumns</B> system tables.</P>
+		<P>To retrieve information from this view, specify the fully qualified name of <B>INFORMATION_SCHEMA</B>
+			<I>view_name</I>.</P>
+		<TABLE id="Table1" cols="3" cellPadding="2" rules="all" width="595" border="1" frame="box">
+			<TR vAlign="top">
+				<TH class="label" width="33%">
+					Column name</TH>
+				<TH class="label" width="22%">
+					Data type</TH>
+				<TH class="label" width="45%">
+					Description</TH></TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>TABLE_CATALOG</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="45%">Catalog or database name of the table-valued function.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>TABLE_SCHEMA</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="45%">Owner of the table-valued function.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>TABLE_NAME</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="45%">Name of the table-valued function.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>COLUMN_NAME</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="45%">Column name.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>ORDINAL_POSITION</B>
+				</TD>
+				<TD width="22%"><B>smallint</B></TD>
+				<TD width="45%">Column identification number.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>COLUMN_DEFAULT</B></TD>
+				<TD width="22%"><B>nvarchar(4000)</B></TD>
+				<TD width="45%">Default value of the column.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>IS_NULLABLE</B></TD>
+				<TD width="22%"><B>varchar(3)</B></TD>
+				<TD width="45%">If this column allows NULL, returns YES. Otherwise, returns NO.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>DATA_TYPE</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="45%">System-supplied data type.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>CHARACTER_MAXIMUM_LENGTH</B>
+				</TD>
+				<TD width="22%"><B>smallint</B></TD>
+				<TD width="45%">Maximum length, in characters, for binary data, character data, or 
+					text and image data. Otherwise, returns NULL. For more information, see <A href="ts_da-db_7msw.asp">
+						Data Types</A>.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>CHARACTER_OCTET_LENGTH</B></TD>
+				<TD width="22%"><B>smallint</B></TD>
+				<TD width="45%">Maximum length, in bytes, for binary data, character data, or text 
+					and image data. Otherwise, returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>NUMERIC_PRECISION</B>
+				</TD>
+				<TD width="22%"><B>tinyint</B></TD>
+				<TD width="45%">Precision of approximate numeric data, exact numeric data, integer<B> </B>
+					data, or monetary data. Otherwise, returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>NUMERIC_PRECISION_RADIX</B>
+				</TD>
+				<TD width="22%"><B>smallint</B></TD>
+				<TD width="45%">Precision radix of approximate numeric data, exact numeric data, 
+					integer<B> </B>data, or monetary data. Otherwise, returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>NUMERIC_SCALE</B>
+				</TD>
+				<TD width="22%"><B>tinyint</B></TD>
+				<TD width="45%">Scale of approximate numeric data, exact numeric data, integer 
+					data, or monetary data. Otherwise, returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>DATETIME_PRECISION</B>
+				</TD>
+				<TD width="22%"><B>smallint</B></TD>
+				<TD width="45%">Subtype code for <B>datetime</B> and SQL-92<B> integer </B>data 
+					types. For other data types, returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>CHARACTER_SET_CATALOG</B></TD>
+				<TD width="22%"><B>varchar(6)</B></TD>
+				<TD width="45%">Returns <B>master</B>, indicating the database in which the 
+					character set is located, if the column is character data or <B>text </B>data 
+					type. Otherwise, returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>CHARACTER_SET_SCHEMA</B>
+				</TD>
+				<TD width="22%"><B>varchar(3)</B></TD>
+				<TD width="45%">Returns <B>DBO</B>, indicating the owner name of the character set, 
+					if the column is character<B> </B>data or <B>text </B>data type. Otherwise, 
+					returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>CHARACTER_SET_NAME</B>
+				</TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="45%">Returns the unique name for the character set if this column is 
+					character data or <B>text </B>data type. Otherwise, returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>COLLATION_CATALOG</B>
+				</TD>
+				<TD width="22%"><B>varchar(6)</B></TD>
+				<TD width="45%">Returns <B>master</B>, indicating the database in which the sort 
+					order is defined, if the column is character<B> </B>data or <B>text </B>data 
+					type. Otherwise, returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>COLLATION_SCHEMA</B>
+				</TD>
+				<TD width="22%"><B>varchar(3)</B></TD>
+				<TD width="45%">Returns <B>DBO</B>, indicating the owner of the sort order for 
+					character<B> </B>data or <B>text </B>data type. Otherwise, returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>COLLATION_NAME</B>
+				</TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="45%">Returns the unique name for the sort order if the column is 
+					character data or <B>text </B>data type. Otherwise, returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>DOMAIN_CATALOG</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="45%">If the column is a user-defined data type, this column is the 
+					database name in which the user-defined data type was created. Otherwise, 
+					returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>DOMAIN_SCHEMA</B></TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="45%">If the column is a user-defined data type, this column is the 
+					creator of the user-defined data type. Otherwise, returns NULL.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="33%"><B>DOMAIN_NAME </B>
+				</TD>
+				<TD width="22%"><B>nvarchar(128)</B></TD>
+				<TD width="45%">
+				If the column is a user-defined data type, this column is the name of the 
+				user-defined data type. Otherwise, returns NULL.</TR>
+		</TABLE>
+	</body>
+</html>

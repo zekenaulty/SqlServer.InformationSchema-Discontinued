@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="ProgId" content="VisualStudio.HTML">
+		<meta name="Originator" content="Microsoft Visual Studio .NET 7.1">
+	</head>
+	<body>
+		<H1><A name="_information_schema.schemata"></A>SCHEMATA</H1>
+		<P>Contains one row for each database that has permissions for the current user. 
+			The <B>INFORMATION_SCHEMA.SCHEMATA</B> view is based on the <B>sysdatabases</B>,
+			<B>sysconfigures</B>, and <B>syscharsets</B> system tables.</P>
+		<P>To retrieve information from these views, specify the fully qualified name of <B>INFORMATION_SCHEMA</B><I>
+				view_name</I>.</P>
+		<TABLE id="Table1" cols="3" cellPadding="2" rules="all" width="587" border="1" frame="box">
+			<TR vAlign="top">
+				<TH class="label" width="36%">
+					Column name</TH>
+				<TH class="label" width="23%">
+					Data type</TH>
+				<TH class="label" width="41%">
+					Description</TH></TR>
+			<TR vAlign="top">
+				<TD width="36%"><B>CATALOG_NAME</B></TD>
+				<TD width="23%"><B>sysname</B></TD>
+				<TD width="41%">Name of the database where the current user has permissions.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="36%"><B>SCHEMA_NAME</B></TD>
+				<TD width="23%"><B>nvarchar(128)</B></TD>
+				<TD width="41%">Returns the name of the schema owner of object.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="36%"><B>SCHEMA_OWNER</B></TD>
+				<TD width="23%"><B>nvarchar(128)</B></TD>
+				<TD width="41%">Schema owner name.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="36%"><B>DEFAULT_CHARACTER_SET_CATALOG</B>
+				</TD>
+				<TD width="23%"><B>varchar(6)</B></TD>
+				<TD width="41%">Returns <B>master</B>, indicating the database where the default 
+					character set is defined.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="36%"><B>DEFAULT_CHARACTER_SET_SCHEMA</B>
+				</TD>
+				<TD width="23%"><B>varchar(3)</B></TD>
+				<TD width="41%">Returns DBO, indicating the name of the default character set 
+					owner.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="36%"><B>DEFAULT_CHARACTER_SET_NAME</B></TD>
+				<TD width="23%"><B>sysname</B></TD>
+				<TD width="41%">
+				Returns the name of the default character set.</TR>
+		</TABLE>
+	</body>
+</html>

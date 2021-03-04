@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="ProgId" content="VisualStudio.HTML">
+		<meta name="Originator" content="Microsoft Visual Studio .NET 7.1">
+	</head>
+	<body>
+		<H1><A name="_information_schema..views"></A>VIEWS</H1>
+		<P>Contains one row for views accessible to the current user in the current 
+			database. The <B>INFORMATION_SCHEMA.VIEWS</B> is based on the <B>sysobjects</B> 
+			and <B>syscomments</B> system tables.</P>
+		<P>To retrieve information from these views, specify the fully qualified name of <B>INFORMATION_SCHEMA</B><I>
+				view_name</I>.</P>
+		<TABLE id="Table1" cols="3" cellPadding="2" rules="all" width="587" border="1" frame="box">
+			<TR vAlign="top">
+				<TH class="label" width="28%">
+					Column name</TH>
+				<TH class="label" width="25%">
+					Data type</TH>
+				<TH class="label" width="47%">
+					Description</TH></TR>
+			<TR vAlign="top">
+				<TD width="28%"><B>TABLE_CATALOG</B></TD>
+				<TD width="25%"><B>nvarchar(128)</B></TD>
+				<TD width="47%">View qualifier.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="28%"><B>TABLE_SCHEMA</B></TD>
+				<TD width="25%"><B>nvarchar(128)</B></TD>
+				<TD width="47%">View owner.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="28%"><B>TABLE_NAME</B></TD>
+				<TD width="25%"><B>nvarchar(128)</B></TD>
+				<TD width="47%">View name.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="28%"><B>VIEW_DEFINITION</B></TD>
+				<TD width="25%"><B>nvarchar(4000)</B></TD>
+				<TD width="47%">If the length of definition is greater than <B>nvarchar(4000)</B>, 
+					this column is NULL; otherwise, this column is the view definition text.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="28%"><B>CHECK_OPTION</B></TD>
+				<TD width="25%"><B>varchar(7)</B></TD>
+				<TD width="47%">Type of WITH CHECK OPTION. Is CASCADE if the original view was 
+					created using the WITH CHECK OPTION. Otherwise, NONE is returned.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="28%"><B>IS_UPDATABLE</B></TD>
+				<TD width="25%"><B>varchar(2)</B></TD>
+				<TD width="47%">Specifies whether the view is updatable. Always returns NO.</TD>
+			</TR>
+		</TABLE>
+	</body>
+</html>

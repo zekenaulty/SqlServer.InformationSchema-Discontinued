@@ -1,0 +1,36 @@
+
+--First result set Table Data
+SELECT
+	tblTables.TABLE_CATALOG,
+	tblTables.TABLE_SCHEMA,
+	tblTables.TABLE_NAME,
+	tblTables.TABLE_TYPE
+FROM
+	INFORMATION_SCHEMA.TABLES AS tblTables
+WHERE
+	tblTables.TABLE_NAME = '@TableName'
+AND
+	tblTables.TABLE_TYPE ='BASE TABLE'
+	
+	
+
+--second result set table columns
+SELECT
+	tblCol.TABLE_CATALOG,
+	tblCol.TABLE_SCHEMA,
+	tblCol.TABLE_NAME,
+	tblCol.COLUMN_NAME,
+	tblCol.ORDINAL_POSITION,
+	tblCol.COLUMN_DEFAULT,
+	tblCol.IS_NULLABLE,
+	tblCol.DATA_TYPE,
+	tblCol.CHARACTER_MAXIMUM_LENGTH,
+	tblCol.CHARACTER_OCTET_LENGTH,
+	tblCol.NUMERIC_PRECISION,
+	tblCol.NUMERIC_PRECISION_RADIX,
+	tblCol.NUMERIC_SCALE
+FROM 
+	INFORMATION_SCHEMA.COLUMNS AS tblCol
+WHERE
+	tblCol.TABLE_NAME = '@TableName'
+

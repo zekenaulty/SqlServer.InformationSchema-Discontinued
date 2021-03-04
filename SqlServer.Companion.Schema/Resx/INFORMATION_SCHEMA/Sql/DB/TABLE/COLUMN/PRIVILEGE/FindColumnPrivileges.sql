@@ -1,0 +1,15 @@
+SELECT 
+	tblColPriv.GRANTOR,
+	tblColPriv.GRANTEE,
+	tblColPriv.TABLE_CATALOG,
+	tblColPriv.TABLE_SCHEMA,
+	tblColPriv.TABLE_NAME,
+	tblColPriv.COLUMN_NAME,
+	tblColPriv.PRIVILEGE_TYPE,
+	tblColPriv.IS_GRANTABLE
+FROM
+	INFORMATION_SCHEMA.COLUMN_PRIVILEGES AS tblColPriv
+WHERE
+	tblColPriv.TABLE_NAME = '@TableName'
+AND
+	tblColPriv.COLUMN_NAME = '@ColumnName'

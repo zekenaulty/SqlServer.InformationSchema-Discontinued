@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="ProgId" content="VisualStudio.HTML">
+		<meta name="Originator" content="Microsoft Visual Studio .NET 7.1">
+	</head>
+	<body>
+		<H1><A name="_information_schema.check_constraints"></A>CHECK_CONSTRAINTS</H1>
+		<P>Contains one row for each CHECK constraint in the current database. This 
+			information schema view returns information about the objects to which the 
+			current user has permissions. The <B>INFORMATION_SCHEMA.CHECK_CONSTRAINTS</B> view 
+			is based on the <B>sysobjects</B> and <B>syscomments</B> system tables.</P>
+		<P>To retrieve information from these views, specify the fully qualified name of <B>INFORMATION_SCHEMA</B><I>
+				view_name</I>.</P>
+		<TABLE id="Table1" cols="3" cellPadding="2" rules="all" width="587" border="1" frame="box">
+			<TR vAlign="top">
+				<TH class="label" width="36%">
+					Column name</TH>
+				<TH class="label" width="25%">
+					Data type</TH>
+				<TH class="label" width="39%">
+					Description</TH></TR>
+			<TR vAlign="top">
+				<TD width="36%"><B>CONSTRAINT_CATALOG</B></TD>
+				<TD width="25%"><B>nvarchar(128)</B></TD>
+				<TD width="39%">Constraint qualifier.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="36%"><B>CONSTRAINT_SCHEMA</B></TD>
+				<TD width="25%"><B>nvarchar(128)</B></TD>
+				<TD width="39%">Constraint owner.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="36%"><B>CONSTRAINT_NAME</B></TD>
+				<TD width="25%"><B>sysname</B></TD>
+				<TD width="39%">Constraint name.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="36%"><B>CHECK_CLAUSE</B>
+				</TD>
+			</TR>
+		</TABLE>
+		<P>&nbsp;</P>
+		<H1><A name="_information_schema.table_constraints"></A>TABLE_CONSTRAINTS</H1>
+		<P>Contains one row for each table constraint in the current database. This 
+			information schema view returns information about the objects to which the 
+			current user has permissions. The <B>INFORMATION_SCHEMA.TABLE_CONSTRAINTS</B> view 
+			is based on the <B>sysobjects</B> system table.</P>
+		<P>To retrieve information from these views, specify the fully qualified name of <B>INFORMATION_SCHEMA</B><I>
+				view_name</I>.</P>
+		<P>
+			<TABLE id="Table2" cols="3" cellPadding="2" rules="all" width="587" border="1" frame="box">
+				<TR vAlign="top">
+					<TH class="label" width="36%">
+						Column name</TH>
+					<TH class="label" width="25%">
+						Data type</TH>
+					<TH class="label" width="39%">
+						Description</TH></TR>
+				<TR vAlign="top">
+					<TD width="36%"><B>CONSTRAINT_CATALOG</B></TD>
+					<TD width="25%"><B>nvarchar(128)</B></TD>
+					<TD width="39%">Constraint qualifier.</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="36%"><B>CONSTRAINT_SCHEMA</B></TD>
+					<TD width="25%"><B>nvarchar(128)</B></TD>
+					<TD width="39%">Constraint owner.</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="36%"><B>CONSTRAINT_NAME</B></TD>
+					<TD width="25%"><B>sysname</B></TD>
+					<TD width="39%">Constraint name.</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="36%"><B>TABLE_CATALOG</B></TD>
+					<TD width="25%"><B>nvarchar(128)</B></TD>
+					<TD width="39%">Table qualifier.</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="36%"><B>TABLE_SCHEMA</B></TD>
+					<TD width="25%"><B>nvarchar(128)</B></TD>
+					<TD width="39%">Table owner.</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="36%"><B>TABLE_NAME</B></TD>
+					<TD width="25%"><B>sysname</B></TD>
+					<TD width="39%">Table name.</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="36%"><B>CONSTRAINT_TYPE</B></TD>
+					<TD width="25%"><B>varchar(11)</B></TD>
+					<TD width="39%">Type of constraint. Can be CHECK, UNIQUE, PRIMARY KEY, or FOREIGN 
+						KEY.</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="36%"><B>IS_DEFERRABLE</B></TD>
+					<TD width="25%"><B>varchar(2)</B></TD>
+					<TD width="39%">Specifies whether constraint checking is deferrable. Always returns 
+						NO.</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="36%"><B>INITIALLY_DEFERRED</B></TD>
+					<TD width="25%"><B>varchar(2)</B></TD>
+					<TD width="39%">Specifies whether constraint checking is initially deferred. Always 
+						returns NO.</TD>
+				</TR>
+			</TABLE>
+		</P>
+		<P>&nbsp;</P>
+		<P>&nbsp;</P>
+		<H1><A name="_information_schema.constraint_table_usage"></A>CONSTRAINT_TABLE_USAGE</H1>
+		<P>Contains one row for each table, in the current database, that has a constraint 
+			defined on it. This information schema view returns information about the 
+			objects to which the current user has permissions. The <B>INFORMATION_SCHEMA.CONSTRAINT_TABLE_USAGE</B>
+			view is based on the <B>sysobjects</B> system table.</P>
+		<P>To retrieve information from these views, specify the fully qualified name of <B>INFORMATION_SCHEMA</B><I>
+				view_name</I>.</P>
+		<P>
+			<TABLE id="Table3" cols="3" cellPadding="2" rules="all" width="587" border="1" frame="box">
+				<TR vAlign="top">
+					<TH class="label" width="40%">
+						Column name</TH>
+					<TH class="label" width="31%">
+						Data type</TH>
+					<TH class="label" width="29%">
+						Description</TH></TR>
+				<TR vAlign="top">
+					<TD width="40%"><B>TABLE_CATALOG</B></TD>
+					<TD width="31%"><B>nvarchar(128)</B></TD>
+					<TD width="29%">Table qualifier</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="40%"><B>TABLE_SCHEMA</B></TD>
+					<TD width="31%"><B>nvarchar(128)</B></TD>
+					<TD width="29%">Table owner</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="40%"><B>TABLE_NAME</B></TD>
+					<TD width="31%"><B>sysname</B></TD>
+					<TD width="29%">Table name</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="40%"><B>CONSTRAINT_CATALOG</B></TD>
+					<TD width="31%"><B>nvarchar(128)</B></TD>
+					<TD width="29%">Constraint qualifier</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="40%"><B>CONSTRAINT_SCHEMA</B></TD>
+					<TD width="31%"><B>nvarchar(128)</B></TD>
+					<TD width="29%">Constraint owner</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="40%"><B>CONSTRAINT_NAME</B></TD>
+					<TD width="31%"><B>sysname</B></TD>
+					<TD width="29%">Constraint name</TD>
+				</TR>
+			</TABLE>
+		</P>
+		<P>&nbsp;</P>
+		<H1><A name="_information_schema.constraint_column_usage"></A>CONSTRAINT_COLUMN_USAGE</H1>
+		<P>Contains one row for each column, in the current database, that has a constraint 
+			defined on it. This information schema view returns information about the 
+			objects to which the current user has permissions. The <B>INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE</B>
+			view is based on the <B>sysobjects</B>, <B>syscolumns</B>, and <B>systypes</B> system 
+			tables.</P>
+		<P>To retrieve information from these views, specify the fully qualified name of <B>INFORMATION_SCHEMA</B><I>
+				view_name</I>.</P>
+		<P>
+			<TABLE id="Table4" cols="3" cellPadding="2" rules="all" width="587" border="1" frame="box">
+				<TR vAlign="top">
+					<TH class="label" width="39%">
+						Column name</TH>
+					<TH class="label" width="32%">
+						Data type</TH>
+					<TH class="label" width="29%">
+						Description</TH></TR>
+				<TR vAlign="top">
+					<TD width="39%"><B>TABLE_CATALOG</B></TD>
+					<TD width="32%"><B>nvarchar(128)</B></TD>
+					<TD width="29%">Table qualifier</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="39%"><B>TABLE_SCHEMA</B></TD>
+					<TD width="32%"><B>nvarchar(128)</B></TD>
+					<TD width="29%">Table owner</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="39%"><B>TABLE_NAME</B></TD>
+					<TD width="32%"><B>nvarchar(128)</B></TD>
+					<TD width="29%">Table name</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="39%"><B>COLUMN_NAME</B></TD>
+					<TD width="32%"><B>nvarchar(128)</B></TD>
+					<TD width="29%">Column name</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="39%"><B>CONSTRAINT_CATALOG</B></TD>
+					<TD width="32%"><B>nvarchar(128)</B></TD>
+					<TD width="29%">Constraint qualifier</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="39%"><B>CONSTRAINT_SCHEMA</B></TD>
+					<TD width="32%"><B>nvarchar(128)</B></TD>
+					<TD width="29%">Constraint owner</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="39%"><B>CONSTRAINT_NAME</B></TD>
+					<TD width="32%"><B>nvarchar(128)</B></TD>
+					<TD width="29%">Constraint name</TD>
+				</TR>
+			</TABLE>
+		</P>
+	</body>
+</html>

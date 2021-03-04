@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="ProgId" content="VisualStudio.HTML">
+		<meta name="Originator" content="Microsoft Visual Studio .NET 7.1">
+	</head>
+	<body>
+		<H1><A name="_information_schema.referential_constraints"></A>REFERENTIAL_CONSTRAINTS</H1>
+		<P>Contains one row for each foreign constraint in the current database. This 
+			information schema view returns information about the objects to which the 
+			current user has permissions. The <B>INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS </B>
+			view is based on the <B>sysreferences</B>, <B>sysindexes</B>, and <B>sysobjects</B>
+			system tables.</P>
+		<P>To retrieve information from these views, specify the fully qualified name of <B>INFORMATION_SCHEMA</B><I>
+				view_name</I>.</P>
+		<TABLE id="Table1" cols="3" cellPadding="2" rules="all" width="587" border="1" frame="box">
+			<TR vAlign="top">
+				<TH class="label" width="32%">
+					Column name</TH>
+				<TH class="label" width="23%">
+					Data type</TH>
+				<TH class="label" width="45%">
+					Description</TH></TR>
+			<TR vAlign="top">
+				<TD width="32%"><B>CONSTRAINT_CATALOG</B></TD>
+				<TD width="23%"><B>nvarchar(128)</B></TD>
+				<TD width="45%">Constraint qualifier.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="32%"><B>CONSTRAINT_SCHEMA</B></TD>
+				<TD width="23%"><B>nvarchar(128)</B></TD>
+				<TD width="45%">Constraint owner.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="32%"><B>CONSTRAINT_NAME</B></TD>
+				<TD width="23%"><B>sysname</B></TD>
+				<TD width="45%">Constraint name.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="32%"><B>UNIQUE_CONSTRAINT_CATALOG</B>
+				</TD>
+				<TD width="23%"><B>nvarchar(128)</B></TD>
+				<TD width="45%">Unique constraint qualifier.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="32%"><B>UNIQUE_CONSTRAINT_SCHEMA</B>
+				</TD>
+				<TD width="23%"><B>nvarchar(128)</B></TD>
+				<TD width="45%">Unique constraint owner.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="32%"><B>UNIQUE_CONSTRAINT_NAME</B>
+				</TD>
+				<TD width="23%"><B>sysname</B></TD>
+				<TD width="45%">Unique constraint.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="32%"><B>MATCH_OPTION</B></TD>
+				<TD width="23%"><B>varchar(7)</B></TD>
+				<TD width="45%">Referential constraint-matching conditions. Always returns NONE, 
+					which means that no match is defined. The condition is considered a match if
+					<UL type="disc">
+						<LI>
+							At least one value in the foreign key column is NULL;
+							<P class="tl">Or
+							</P>
+						<LI>
+							All values in the foreign key column are not NULL and there is a row in the 
+							primary key table with exactly the same key.
+						</LI>
+					</UL>
+				</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="32%"><B>UPDATE_RULE</B></TD>
+				<TD width="23%"><B>varchar(9)</B></TD>
+				<TD width="45%">The action that is taken if a Transact-SQL statement violates 
+					referential integrity defined by this constraint.
+					<P>Returns either NO ACTION or CASCADE. If NO ACTION is specified on ON UPDATE for 
+						this constraint, then the update of the primary key referenced in the 
+						constraint will not be propagated to the foreign key. If such update of a 
+						primary key will cause a referential integrity violation because at least one 
+						foreign key contains the same value, SQL Server will not execute any change to 
+						the parent and referring tables. SQL Server also will raise an error.</P>
+					<P>If CASCADE is specified on ON UPDATE for this constraint, then any change to the 
+						primary key value is automatically propagated to the foreign key value.</P>
+				</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="32%"><B>DELETE_RULE</B></TD>
+				<TD width="23%"><B>varchar(9)</B></TD>
+				<TD width="45%">The action that is taken if a Transact-SQL statement violates 
+					referential integrity defined by this constraint.
+					<P>Returns either NO ACTION or CASCADE. If NO ACTION is specified on ON DELETE for 
+						this constraint, then the delete on the primary key referenced in the 
+						constraint will not be propagated to the foreign key. If such delete of a 
+						primary key will cause a referential integrity violation because at least one 
+						foreign key contains the same value, SQL Server will not execute any change to 
+						the parent and referring tables. SQL Server also will raise an error.</P>
+					<P>If CASCADE is specified on ON DELETE on this constraint, then any change to the 
+						primary key value is automatically propagated to the foreign key value.</P>
+			</TR>
+		</TABLE>
+	</body>
+</html>

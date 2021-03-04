@@ -1,0 +1,14 @@
+SELECT
+	tblViewCol.VIEW_CATALOG,
+	tblViewCol.VIEW_SCHEMA,
+	tblViewCol.VIEW_NAME,
+	tblViewCol.TABLE_CATALOG,
+	tblViewCol.TABLE_SCHEMA,
+	tblViewCol.TABLE_NAME,
+	tblViewCol.COLUMN_NAME
+FROM
+	INFORMATION_SCHEMA.VIEW_COLUMN_USAGE AS tblViewCol
+WHERE
+	tblViewCol.VIEW_NAME = '@ViewName'
+AND
+	tblViewCol.COLUMN_NAME = '@ColumnName'

@@ -1,0 +1,86 @@
+====================================================================================================
+
+App: SqlServer.Companion.Enviorment
+By: Joseph Ezekiel Naulty
+
+====================================================================================================
+Purpose:
+====================================================================================================
+This program is a beta utility program; it has been used 
+to test the following Code libraries:
+
+SqlServer.Companion
+SqlServer.Companion.Schema
+SqlServer.Companion.CodeDom
+====================================================================================================
+Description:
+====================================================================================================
+Currently this application provides generation of DAL/DLL level classes, business classes & 
+strongbusiness collections, database CRUD, and custom queries. 
+
+This version of the utility only allows the creation of custom queries that use = comparison. 
+SqlServer.Companion.CodeDom supports the generation of queries with all supported SQL operators, 
+but the addition of this support was late in the development of this utility, and it was
+not implemented in this UI.
+
+Note: I am currently working on a final UI for these libraries that will support
+projects, more complex quries, and nested object and object collections based
+on table relations, batch generation... 
+
+====================================================================================================
+Notes on usage:
+====================================================================================================
+1) This app will create Stored Procedures in the database.
+
+2) As well as changeing the data class, the Business class 
+	contains one method that must be updated for each query
+	and one method that handles conversion of data level objects
+	to business level objects. There fore you will need to generate 
+	code in one directory and keep your project files in another.
+	
+	I recommend putting all business level generated code in a region
+	so that you can freely extend your business object and simply
+	copy and past generated code from the generated file to the 
+	region set to hold generated code.
+	
+	The method that has to be updated for conversion
+	will look something like this.
+	
+		public static BusinessClass FromBase(DataClass data)
+		{
+			BusinessClass ret = new BusinessClass();
+			ret._mProp01 = data.Prop01;
+			ret._mProp02 = data.Prop02;
+			ret._mProp03 = data.Prop03;
+			ret._mProp04 = data.Prop04;
+
+			return ret;
+		}w
+		
+
+3) To Implement your own custom sql queries you should simply add the functionality
+	to your business object. This not be best practice but it is less trouble than 
+	using the generation region and copy paste method on the business and
+	data classes. Alternatly you could create an extra data class that inherits 
+	the original and extends it with additional methods. You would need to
+	create an additional class at the business level that inherits this new class.
+
+
+4) This is beta, and while I am sure it is bug free, you never know.
+
+5) Every line of code in every project was written by me (Zeke Naulty)
+   if you want to give me some money e-mail me zeke@netnsite.com
+   
+6) If your table is invalid the program will crash... like if it has only an ID.. 
+   can't update nothing you know..
+   
+7) Only int and uniqueidentiefer primary keys are supported. Other types will not 
+   interrupt the generation but Inserts will not be able to update
+   a primary key on the object. There are ways to make string types work,
+   but I felt it wasn't worth the effort because I can't think of an instance where
+   I would need a string primary key when a GUID wouldn't handle things...
+   
+8) The better your database design the better this tool will work.
+
+9) VB.Net & C# are both suported. I may at a later date add J#/Java.Net.
+====================================================================================================
